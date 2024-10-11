@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade</title>
+</head>
+<body>
+    <p id="total">Total Marks: 100</p>
+    <input type="number" placeholder="Enter your marks" id="mark">
+    <input type="button" value="Generate Grade" onclick="grade()">
+    <p id="result"></p>
+</body>
+<script>
+    function grade() {
+        let a = Number(document.getElementById("mark").value);
+        let tot = 100;
+        
+        if (a >= 0 && a <= tot) {
+            if (a >= 90) {
+                document.getElementById("result").innerHTML = "Grade: A+";
+            } else if (a >= 80) {
+                document.getElementById("result").innerHTML = "Grade: A";
+            } else if (a >= 70) {
+                document.getElementById("result").innerHTML = "Grade: B+";
+            } else if (a >= 60) {
+                document.getElementById("result").innerHTML = "Grade: B";
+            } else if (a >= 50) {
+                document.getElementById("result").innerHTML = "Grade: C+";
+            } else {
+                document.getElementById("result").innerHTML = "Grade: F";
+            }
+        } else {
+            document.getElementById("result").innerHTML = "Please enter a mark between 0 and 100.";
+        }
+    }
+</script>
+</html>
