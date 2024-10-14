@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+</head>
+<body>
+    <form id="quizForm">
+        <ol>
+            <li id="qst1"><p> What is my fvrt spot</p></li>
+            <input type="radio" name="q1" value="Paris"> Paris<br>
+            <input type="radio" name="q1" value="London"> London<br>
+            <input type="radio" name="q1" value="beach"> Beach
+        
+            <li id="qst2"><p> What is 2 + 2?</p></li>
+            <input type="radio" name="q2" value="3"> 3<br>
+            <input type="radio" name="q2" value="4"> 4<br>
+            <input type="radio" name="q2" value="5"> 5
+        
+            <li id="qst3"><p>3What is my name</p></li>
+            <input type="radio" name="q3" value="Varada"> Varada<br>
+            <input type="radio" name="q3" value="Jupiter"> sulochana<br>
+            <input type="radio" name="q3" value="Mars"> sumathi
+        </ol>
+        
+        <input type="button" value="Submit" onclick="checkAnswers()">
+    </form>
+
+    <p id="output"></p>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            let form = document.getElementById("quizForm");
+
+            let q1Answer = form.elements["q1"].value;
+            if (q1Answer === 'Paris') {
+                score++;
+            }
+
+            let q2Answer = form.elements["q2"].value;
+            if (q2Answer === '4') {
+                score++;
+            }
+
+            let q3Answer = form.elements["q3"].value;
+            if (q3Answer === 'Varada') {
+                score++;
+            }
+
+            document.getElementById("output").innerHTML = "You got " + score + " out of 3 correct!";
+        }
+    </script>
+</body>
+</html>
